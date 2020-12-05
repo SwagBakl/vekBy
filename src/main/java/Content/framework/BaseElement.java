@@ -27,7 +27,7 @@ public class BaseElement {
     public void takeElementScreenshot(By customLocator, String path, String name, String format){
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_yyyy_HH_mm_ss");
-        WebElement element = new WebDriverWait(startDriver.getDriver(), 20)
+        WebElement element = new WebDriverWait(startDriver.getDriver(), 30)
                 .until(ExpectedConditions.presenceOfElementLocated(customLocator));
         File scrFile = element.getScreenshotAs(OutputType.FILE);
         File destFile = new File(path + name + "_" + formatter.format(date) + "." + format);

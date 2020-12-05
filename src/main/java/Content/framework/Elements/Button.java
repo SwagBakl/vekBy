@@ -21,13 +21,13 @@ public class Button {
     }
 
     public void press() {
-        WebElement button = new WebDriverWait(driver, 20)
+        WebElement button = new WebDriverWait(driver, 30)
                 .until(ExpectedConditions.elementToBeClickable(locator));
         button.click();
     }
 
     public boolean isEnabled() {
-        WebElement button = new WebDriverWait(driver, 10)
+        WebElement button = new WebDriverWait(driver, 30)
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
         return button.isEnabled();
     }

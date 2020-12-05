@@ -28,7 +28,7 @@ public class BasePage {
     }
 
     public boolean isPresent() {
-        WebElement page = new WebDriverWait(startDriver.getDriver(), 10)
+        WebElement page = new WebDriverWait(startDriver.getDriver(), 30)
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
         return page.findElements(locator).size() > 0;
     }
@@ -38,7 +38,7 @@ public class BasePage {
     }
 
     protected WebElement findElement(By locator) {
-        return new WebDriverWait(startDriver.getDriver(), 20)
+        return new WebDriverWait(startDriver.getDriver(), 30)
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 

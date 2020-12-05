@@ -21,7 +21,7 @@ public class Input {
     }
 
     public void sendKeys(String keys) {
-        WebElement input = new WebDriverWait(driver, 10)
+        WebElement input = new WebDriverWait(driver, 30)
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
         input.sendKeys(keys);
     }

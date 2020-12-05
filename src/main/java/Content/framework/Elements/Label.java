@@ -21,7 +21,7 @@ public class Label {
     }
 
     public boolean isEnabled() {
-        WebElement label = new WebDriverWait(driver, 10)
+        WebElement label = new WebDriverWait(driver, 30)
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
         return label.isEnabled();
     }
