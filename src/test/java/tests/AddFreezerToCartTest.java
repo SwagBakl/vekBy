@@ -1,6 +1,5 @@
 package tests;
 
-import Content.Pages.AuthorizedPage;
 import Content.Pages.CartPage;
 import Content.Pages.FreezerContentPage;
 import Content.Pages.UnAuthorizePage;
@@ -10,7 +9,7 @@ import Content.menu.KitchenMenu;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AddFreezerToCartTest {
+public class AddFreezerToCartTest extends BaseTest {
 
     @Test
     public void addFreezerToCart() {

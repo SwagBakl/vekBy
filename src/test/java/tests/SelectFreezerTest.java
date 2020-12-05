@@ -1,6 +1,8 @@
 package tests;
 
-import Content.Pages.*;
+import Content.Pages.FilterForm;
+import Content.Pages.FreezerContentPage;
+import Content.Pages.FreezerPage;
 import Content.SomeUtils;
 import Content.enums.KitchenMenuItems;
 import Content.enums.MainMenuItems;
@@ -9,7 +11,7 @@ import Content.menu.MainMenu;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SelectFreezerTest extends BaseTest{
+public class SelectFreezerTest extends BaseTest {
 
     @Test
     public void selectFreezer() {
