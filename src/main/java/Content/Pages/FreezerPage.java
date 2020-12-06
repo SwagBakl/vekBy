@@ -1,5 +1,6 @@
 package Content.Pages;
 
+import Content.SomeUtils;
 import Content.framework.BasePage;
 import Content.models.FreezerModel;
 import org.openqa.selenium.By;
@@ -20,10 +21,8 @@ public class FreezerPage extends BasePage {
     }
 
     private Double getPrice() {
-        return Double.parseDouble(findElement(freezerPriceLocator)
-                .getText()
-                .replace("р.", "")
-                .replace(",", "."));
+        return Double.parseDouble(SomeUtils.priceFormatter(findElement(freezerPriceLocator)
+                .getText()));
     }
 
     public FreezerModel getFreezer() {

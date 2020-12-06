@@ -1,5 +1,6 @@
 package Content.Pages;
 
+import Content.SomeUtils;
 import Content.framework.BasePage;
 import Content.framework.Elements.Button;
 import Content.models.FreezerModel;
@@ -27,8 +28,7 @@ public class FreezerContentPage extends BasePage {
         return freezersList
                 .stream()
                 .map(WebElement::getText)
-                .map(element -> element.replace("р.", ""))
-                .map(el -> el.replace(",", "."))
+                .map(SomeUtils::priceFormatter)
                 .collect(Collectors.toList());
     }
 
@@ -37,9 +37,7 @@ public class FreezerContentPage extends BasePage {
     }
 
     private Double getFreezerPrice() {
-        return Double.parseDouble(findElement(freezersPriceListLocator).getText()
-                .replace("р.", "")
-                .replace(",", "."));
+        return Double.parseDouble(SomeUtils.priceFormatter(findElement(freezersPriceListLocator).getText()));
     }
 
     public FreezerModel getFreezerNameAndPrice() {
