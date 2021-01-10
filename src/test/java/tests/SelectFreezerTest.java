@@ -1,7 +1,7 @@
 package tests;
 
 import Content.Pages.FilterForm;
-import Content.Pages.FreezerContentPage;
+import Content.Pages.ContentPage;
 import Content.Pages.FreezerPage;
 import Content.SomeUtils;
 import Content.enums.KitchenMenuItems;
@@ -24,12 +24,12 @@ public class SelectFreezerTest extends BaseTest {
         FilterForm filterForm = new FilterForm();
         filterForm.setPriceFilter(800, 1000);
         filterForm.pressShowProducts();
-        FreezerContentPage contentPage = new FreezerContentPage();
+        ContentPage contentPage = new ContentPage();
         Assert.assertTrue(SomeUtils.checkFilteredPriceList(
-                contentPage.getFreezersPriceList(), 800.00, 1000.00), "NONONO");
+                contentPage.getPriceList(), 800.00, 1000.00), "NONONO");
         String freezerModel = contentPage.getFreezerNameAndPrice().getModelName();
         Double freezerPrice = contentPage.getFreezerNameAndPrice().getPrice();
-        contentPage.pressOnConcreteFreezer();
+//        contentPage.pressOnConcreteFreezer();
         FreezerPage freezerPage = new FreezerPage();
         Assert.assertEquals(freezerModel, freezerPage.getFreezer().getModelName());
         Assert.assertEquals(freezerPrice, freezerPage.getFreezer().getPrice());
